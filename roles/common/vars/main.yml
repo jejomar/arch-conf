@@ -1,9 +1,0 @@
-## User Information
-username: jejomar
-
-## AUR vars
-use_aur: True
-aur:
-  dir: aur
-  packages:
-    - yay

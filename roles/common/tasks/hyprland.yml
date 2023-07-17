@@ -1,7 +1,0 @@
-- name: Setup Hyprland
-  aur:
-    name:
-      hyprland-git
-      xdg-desktop-hyprland-git
-      waybar-hyprland-git
-    user: "{{ username }}"
