@@ -1,0 +1,3 @@
+# AUR
+- include: aur.yml
+  when: use_aur == True
