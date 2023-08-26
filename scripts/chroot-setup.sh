@@ -32,18 +32,18 @@ bootctl install
 
 # Edit loader configuration
 cat <<EOF >>/boot/loader/loader.conf
-default    arch.conf
-timeout    5
-console-mode    keep
+default		arch.conf
+timeout		3
+console-mode	keep
 EOF
 
 # Generate arch.conf
 touch /boot/loader/entries/arch.conf
 cat <<EOF >>/boot/loader/entries/arch.conf
 title    Arch Linux
-linux    /vmlinuz-linux
+linux    /vmlinuz-linux-zen
 initrd   /intel-ucode.img
-initrd   /initramfs-linux.img
+initrd   /initramfs-linux-zen.img
 options  root=/dev/nvme0n1p2 rw pci=noaer
 EOF
 
