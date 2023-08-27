@@ -61,8 +61,8 @@ echo "Successfully created user directories"
 
 # Install base fonts
 yay -S --needed \
-ttf-ibm-plex \
-ttf-ibmplex-mono-nerd \
+inter-font \
+ttf-terminus-nerd \
 otf-font-awesome \
 noto-fonts \
 noto-fonts-cjk \
