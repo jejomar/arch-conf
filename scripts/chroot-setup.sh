@@ -10,9 +10,9 @@ ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 hwclock --systohc
 
 # Set localization
-sed -i 's/^#\s*\(en_US.UTF-8\s\+UTF-8\)/\1/' /etc/locale.gen
+sed -i 's/^#\s*\(en_PH.UTF-8\s\+UTF-8\)/\1/' /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "LANG=en_PH.UTF-8" > /etc/locale.conf
 
 # Set hostname
 echo "Setting hostname to ${HOSTNAME}..."
@@ -44,7 +44,7 @@ title    Arch Linux
 linux    /vmlinuz-linux-zen
 initrd   /intel-ucode.img
 initrd   /initramfs-linux-zen.img
-options  root=/dev/nvme0n1p2 rw pci=noaer
+options  root="LABEL=arch" rw pci=noaer
 EOF
 
 # Reboot
