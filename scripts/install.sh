@@ -35,7 +35,7 @@ waybar-hyprland-git \
 hyprpaper-git
 
 # Hyprland authentication agent
-yay -S --needed polkit-de-agent
+yay -S --needed polkit-kde-agent
 
 # Hyprland: Expanding functionality tools
 yay -S --needed socat
@@ -60,7 +60,7 @@ xdg-user-dirs-update
 echo "Successfully created user directories"
 
 # Install base fonts
-yay -S -needed \
+yay -S --needed \
 ttf-ibm-plex \
 ttf-ibmplex-mono-nerd \
 otf-font-awesome \
