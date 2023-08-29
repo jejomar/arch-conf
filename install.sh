@@ -61,8 +61,8 @@ echo "Successfully created user directories"
 
 # Install base fonts
 yay -S --needed \
-inter-font \
-ttf-terminus-nerd \
+ttf-ibm-plex \
+ttf-ibmplex-mono-nerd \
 otf-font-awesome \
 noto-fonts \
 noto-fonts-cjk \
@@ -140,8 +140,8 @@ wf-recorder \
 wl-clipboard
 
 # For SDDM theming
-yay -S --neded \
-qt5-graphicaleffectsa \
+yay -S --needed \
+qt5-graphicaleffects \
 qt5-svg \
 qt5-quickcontrols2
 
@@ -156,6 +156,9 @@ imagemagick
 
 # Music
 # yay -S --needed mpd mpc ncmpcpp
+
+# Neovim plugin setup
+yay -S --needed npm
 
 # Enable necessary services
 sudo systemctl enable sddm.service
