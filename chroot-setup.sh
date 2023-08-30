@@ -44,7 +44,7 @@ title    Arch Linux
 linux    /vmlinuz-linux-zen
 initrd   /intel-ucode.img
 initrd   /initramfs-linux-zen.img
-options  root="LABEL=arch" rw pci_aspm=off ath10k_core.skip_otp=y
+options  root="LABEL=arch" rw pcie_aspm=off ath10k_core.skip_otp=y
 EOF
 
 # Reboot

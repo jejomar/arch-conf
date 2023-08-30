@@ -96,7 +96,8 @@ gvfs \
 gvfs-mtp \
 thunar-archive-plugin \
 thunar-volman \
-ntfs-3g
+ntfs-3g \
+dosfstools
 
 # File manager thumbnail support
 yay -S --needed \
