@@ -18,49 +18,49 @@ mesa-vdpau \
 lib32-mesa-vdpau
 
 # Install GUI related things
-mkdir bin
-cd bin/
-git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -si
-cd
-rm -rf bin
+# mkdir bin
+# cd bin/
+# git clone https://aur.archlinux.org/yay.git
+# cd yay/
+# makepkg -si
+# cd ..
+# rm -rf bin
+
+# Create user directories
+# sudo pacman -S --needed --noconfirm xdg-user-dirs
+# xdg-user-dirs-update
+# echo "Successfully created user directories"
 
 # Install AUR packages for login and window manager
-yay -S --needed \
-sddm-git \
-hyprland-git \
-xdg-desktop-portal-hyprland-git \
-waybar-hyprland-git \
-hyprpaper-git
-
-# Hyprland authentication agent
-yay -S --needed polkit-kde-agent
-
-# Hyprland: Expanding functionality tools
-yay -S --needed socat
-
-# Wayland QT support
-yay -S --needed \
+# yay -S --needed \
+# sddm-git \
+# hyprland-git \
+# xdg-desktop-portal-hyprland-git \
+# waybar-hyprland-git \
+# hyprpaper-git
+sudo pacman -S --needed --noconfirm \
+sddm \
+hyprcursor \
+hypridle \
+hyprland \
+hyprlang \
+hyprlock \
+hyprpaper \
+xdg-desktop-portal-hyprland \
+xdg-desktop-portal-gtk \
+waybar \
+polkit-kde-agent \
+socat \
 qt5-wayland \
-qt6-wayland
-
-# Additional Hyprland packages
-yay -S --needed \
+qt6-wayland \
 kitty \
-wlogout \
-rofi \
 neofetch \
 dunst \
 network-manager-applet
 
-# Create user directories
-yay -S --needed xdg-user-dirs
-xdg-user-dirs-update
-echo "Successfully created user directories"
 
 # Install base fonts
-yay -S --needed \
+sudo pacman -S --needed --noconfirm \
 ttf-ibm-plex \
 ttf-ibmplex-mono-nerd \
 otf-font-awesome \
@@ -69,55 +69,10 @@ noto-fonts-cjk \
 noto-fonts-emoji \
 ttf-liberation
 
-# Install video player and image viewer
-yay -S --needed \
+# Media
+sudo pacman -S --needed \
 mpv \
-feh
-
-# Install web browsers
-yay -S --needed \
-firefox \
-chromium
-
-# Install additional tools
-yay -S --needed \
-yt-dlp \
-qbittorrent \
-
-# Install document tools
-yay -S --needed \
-zathura \
-masterpdfeditor-free
-
-# File manager base
-yay -S --needed \
-thunar \
-gvfs \
-gvfs-mtp \
-thunar-archive-plugin \
-thunar-volman \
-ntfs-3g \
-dosfstools
-
-# File manager thumbnail support
-yay -S --needed \
-tumbler \
-ffmpegthumbnailer \
-webp-pixbuf-loader \
-poppler-glib \
-freetype2 \
-libgsf
-
-# Archive support
-yay -S --needed \
-file-roller \
-p7zip \
-unrar \
-unzip \
-zip
-
-# Audio Stuff
-yay -S --needed \
+feh \
 pipewire \
 lib32-pipewire \
 wireplumber \
@@ -128,29 +83,78 @@ pipewire-jack \
 lib32-pipewire-jack \
 pavucontrol
 
+
+# Install web browsers
+sudo pacman -S --needed --confirm \
+firefox \
+chromium \
+vivaldi
+
+# Install additional tools
+sudo pacman -S --needed --confirm \
+yt-dlp \
+qbittorrent \
+
+# Install document tools
+# yay -S --needed \
+# zathura \
+# masterpdfeditor-free
+
+# File manager base
+sudo pacman -S --needed --confirm \
+thunar \
+gvfs \
+gvfs-mtp \
+thunar-archive-plugin \
+thunar-volman \
+ntfs-3g \
+dosfstools
+
+# File manager thumbnail support
+sudo pacman -S --needed --confirm \
+tumbler \
+ffmpegthumbnailer \
+webp-pixbuf-loader \
+poppler-glib \
+freetype2 \
+libgsf
+
+# Archive support
+sudo pacman -S --needed --confirm \
+file-roller \
+p7zip \
+unrar \
+unzip \
+zip
+
 # Bluetooth
-yay -S --needed bluez bluez-utils blueman
+sudo pacman -S --needed --noconfirm bluez bluez-utils blueman
 
 # For Screenshot and Screen record
-yay -S --needed \
-grim \
-slurp \
-swappy \
-xbindkeys \
-wf-recorder \
-wl-clipboard
+# yay -S --needed \
+# grim \
+# slurp \
+# swappy \
+# xbindkeys \
+# wf-recorder \
+# wl-clipboard
 
 # For SDDM theming
-yay -S --needed \
-qt5-graphicaleffects \
-qt5-svg \
-qt5-quickcontrols2
+# yay -S --needed \
+# qt5-graphicaleffects \
+# qt5-svg \
+# qt5-quickcontrols2
+
+# Theming
+sudo pacman -S --needed --noconfirm \
+gtk-engine-murrine \
+telegram-desktop
 
 # Android Debug Bridge
-yay -S --needed android-tools libmtp
+sudo pacman -S --needed --noconfirm android-tools libmtp
 
 # Musicbrainz Picard
-yay -S --needed \
+sudo pacman -S --needed --noconfirm \
 picard \
 chromaprint \
 imagemagick
@@ -159,11 +163,20 @@ imagemagick
 # yay -S --needed mpd mpc ncmpcpp
 
 # Neovim plugin setup
-yay -S --needed npm
+sudo pacman -S --needed --noconfirm npm
+
+# AUR Packages
+yay -S --aur --needed \
+brave-bin \
+rofi-lbonn-wayland \
+spotify \
+nwg-look-bin \
+discord_arch_electron \
+pcsx2
 
 # Enable necessary services
-sudo systemctl enable sddm.service
-sudo systemctl enable bluetooth.service
+# sudo systemctl enable sddm.service
+# sudo systemctl enable bluetooth.service
 
 # Prompt user to reboot to GUI
 echo "Reboot now."
